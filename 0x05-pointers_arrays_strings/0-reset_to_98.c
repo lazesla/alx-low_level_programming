@@ -7,6 +7,7 @@
  * @n: input
  * Return: n
  */
+int main(void){
 void reset_to_98(int *n)
 {
         *n = 98;
@@ -15,4 +16,5 @@ void reset_to_98(int *n)
     printf("n=%d\n", n);
     return (0);
 
+}
 }
