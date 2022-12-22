@@ -2,21 +2,58 @@
 #include <stdio.h>
 
 /**
- * infinite_add - add two string numbers
- * @n1: string number to add to n2
- * @n2: string number to add to n1
- * @r: buffer to store the sum
- * @size_r: size of buffer
- * return: pointer to sum or 0 if it does not fit in r
+ * main - check the code
+ *
+ * Return: Always 0.
  */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
+int main(void)
 {
-	int len1 = 0, len2 = 0, lenS = 0;
-	
-	while (*(n1 + len1++))
-		;
-	while (*(n2 + len2++))
-		;
-	printf("%d, %d\n", len1, len2);
-	return (r);
+        char *n = "1234567892434574367823574575678477685785645685876876774586734734563456453743756756784458";
+        char *m = "9034790663470697234682914569346259634958693246597324659762347956349265983465962349569346";
+        char r[100];
+        char r2[10];
+        char r3[11];
+        char *res;
+
+        res = infinite_add(n, m, r, 100);
+        if (res == 0)
+        {
+                printf("Error\n");
+        }
+        else
+        {
+                printf("%s + %s = %s\n", n, m, res);
+        }
+        n = "1234567890";
+        m = "1";
+        res = infinite_add(n, m, r2, 10);
+        if (res == 0)
+        {
+                printf("Error\n");
+        }
+        else
+        {
+                printf("%s + %s = %s\n", n, m, res);
+        }
+        n = "999999999";
+        m = "1";
+        res = infinite_add(n, m, r2, 10);
+        if (res == 0)
+        {
+                printf("Error\n");
+        }
+        else
+        {
+                printf("%s + %s = %s\n", n, m, res);
+        }
+        res = infinite_add(n, m, r3, 11);
+        if (res == 0)
+        {
+                printf("Error\n");
+        }
+        else
+        {
+                printf("%s + %s = %s\n", n, m, res);
+        }
+        return (0);
 }
