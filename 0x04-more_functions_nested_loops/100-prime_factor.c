@@ -1,40 +1,29 @@
 #include <stdio.h>
+#include <main.h>
 
-int main()
+/**
+ * main - Print largest prime number factor
+ * Return: Success 0
+ */
+int main(void)
+{
+	unsigned long num = 612852475143;
+	unsigned long largestPrime = -1;
+	unsigned long i;
+
+	while (num % 2 == 0)
+		num /= 2;
+
+	for (i = 3; i <= sqrt(num); i += 2)
 	{
-	int i, j, num, isPrime;
-
-    /* Input a number from user */
-	scanf("%d", &612852475143);
-
-	printf("All Prime Factors of %d are: \n", 612852475143);
-
-    /* Find all Prime factors */
-	for(i=2; i<=612852475143; i++)
-	{
-        /* Check 'i' for factor of num */
-	if(612852475143%i==0)
-	{
-            /* Check 'i' for Prime */
-            isPrime = 1;
-		for(j=2; j<=i/2; j++)
+		while (num % i == 0)
 		{
-		if(i%j==0)
-		{
-		isPrime = 0;
-		break;
+			largestPrime = i;
+			num /= i;
 		}
 	}
-
-            /* If 'i' is Prime number and factor of num */
-		if(isPrime==1)
-		{
-		printf("("%d, ", i);
-	}
-	}
-	}
-
-    return 0;
+	if (largestPrime < num)
+		largestPrime = num;
+	printf("%lu\n", largestPrime);
+	return (0);
 }
-
-
