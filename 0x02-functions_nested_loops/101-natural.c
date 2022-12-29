@@ -1,30 +1,21 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- * main - calls natural
- *
- * Return: always 0
+ * main - sum of all nums divisible by 3 or 5 from 0-1024
+ * Return: Success 0
  */
 int main(void)
 {
-	natural();
-	return (0);
-}
+	int n;
+	int sum = 0;
 
-/**
- * natural - prints sum of all multiples of 3 & 5 less thn 1024
- *
- * Return: void
- */
-void natural(void)
-{
-	int i, s;
-
-	for (i = 0, s = 0; i < 1024; i++)
+	for (n = 0; n < 1024; n++)
 	{
-		if (!(i % 3) || !(i % 5))
-			s += i;
+		if (n % 3 == 0)
+			sum += n;
+		else if (n % 5 == 0)
+			sum += n;
 	}
-	printf("%d\n", s);
+	printf("%d\n", sum);
+	return (0);
 }
