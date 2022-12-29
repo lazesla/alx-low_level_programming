@@ -1,35 +1,25 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- * main - calls fibonacci
- *
- * Return: always 0
+ * main - print first 50 nums of fibonacci
+ * Return: 0
  */
 int main(void)
 {
-	fibonacci();
-	return (0);
-}
-
-/**
- * fibonacci - print first 100 fibonacci numbers
- *
- * Return: void
- */
-void fibonacci(void)
-{
+	unsigned long int a = 0;
+	unsigned long int b = 1;
+	unsigned long cur;
 	int i;
-	unsigned long a, b, c;
 
-	for (a = 1, b = 2, i = 0; i < 50; i++)
+	for (i = 0; i < 50; i++)
 	{
-		printf("%lu", a);
-		if (i < 49)
+		cur = a + b;
+		printf("%lu", cur);
+		if (i != 49)
 			printf(", ");
-		c = a;
 		a = b;
-		b += c;
+		b = cur;
 	}
-	puts("");
+	putchar('\n');
+	return (0);
 }
