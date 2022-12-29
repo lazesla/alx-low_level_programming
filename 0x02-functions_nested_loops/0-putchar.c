@@ -1,20 +1,15 @@
 #include "main.h"
+
 /**
- * main - Print "main" followed by a new line.
- * Description: You are not allowed to include standard libraries.
- * Return: 0
+ * main - entry point
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-	char main[] = "main";
-	int i = 0;
+	char *str = "Holberton\n";
 
-	while (mai[i] != '\0')
-	{
-		_putchar(main[i]);
-		i++;
-	}
-	_putchar('\n');
-
+	while (*str != '\0')
+		_putchar(*str++);
 	return (0);
 }
