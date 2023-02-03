@@ -1,15 +1,13 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * get_endianness - detects endian architecture
- * Return: big endian(0), little endian(1)
+ * get_endianness - returns the endianness of the system
+ *
+ * Return: 0 if big endian, 1 if small
  */
 int get_endianness(void)
 {
-	unsigned int x = 0x76543210;
-	char *c = (char *) &x;
+	unsigned long int n = 1;
 
-	if (*c == 0x10)
-		return (1);
-	return (0);
+	return (*(char *)&n);
 }
