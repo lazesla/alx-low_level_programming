@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * get_endianness - detects endian architecture
  * Return: big endian(0), little endian(1)
